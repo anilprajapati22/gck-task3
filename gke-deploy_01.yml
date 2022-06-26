@@ -1,0 +1,15 @@
+steps:
+  # build the container image
+- name: "gcr.io/cloud-builders/docker"
+  args: ["build", "-t", "gcr.io/ringed-land-354108/apache-task3:latest", "."]
+  # push container image
+- name: "gcr.io/cloud-builders/docker"
+  args: ["push", "gcr.io/ringed-land-354108/apache-task3:latest"]
+  # deploy container image to GKE
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --filename=app.yml
+  - --image=gcr.io/ringed-land-354108/apache-task3:latest
+  - --location=us-central1-c
+  - --cluster=adarsh-cluster
