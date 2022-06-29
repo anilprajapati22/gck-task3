@@ -18,3 +18,4 @@ spec:
     spec:
       containers:
       - name: "nginx-1"
+        image: "nginx:latet"
