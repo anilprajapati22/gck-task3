@@ -12,4 +12,4 @@ steps:
   - --filename=app.yml
   - --image=gcr.io/ringed-land-354108/apache-task3:latest
   - --location=us-central1-c
-  - --cluster=adarsh-cluster
+  - --cluster=task3-gke
