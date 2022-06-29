@@ -1,6 +1,6 @@
-FROM ubuntu 
-RUN apt update 
-RUN apt install apache2 -y
-EXPOSE 80
-RUN echo "sgnons from anil and adarsh"
-CMD [“apache2ctl”, “-D”, “FOREGROUND”]
+FROM python:3.6
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+ENTRYPOINT ["python"]
+CMD ["app.py"]
