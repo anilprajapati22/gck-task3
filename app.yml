@@ -18,4 +18,3 @@ spec:
     spec:
       containers:
       - name: "nginx-1"
-        image: "gcr.io/ringed-land-354108/apache-task3:latest"
